@@ -13,14 +13,14 @@ async def extract_audio(client, message, data):
     out_loc = data['location'] + ".mkv"
 
     if data['name'] == "mkv":
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -vf crop=1280:536 -c:v libx265 -crf 23 -preset slow -c:a copy -c:s copy -metadata title='Tamil Fusion - t.me/TamilFusion1' -metadata Info='Encoded By - GJ | TFx' -metadata:s:v title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:a title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:s title='Tamil Fusion - t.me/TamilFusion1' '{out_loc}' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -vf crop=1440:784 -c:v libx265 -crf 23 -preset slow -c:a copy -c:s copy -metadata title='Tamil Fusion - t.me/TamilFusion1' -metadata Info='Encoded By - GJ | TFx' -metadata:s:v title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:a title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:s title='Tamil Fusion - t.me/TamilFusion1' '{out_loc}' -y")
         if rcode != 0:
             await message.edit_text("**Error Occured. See Logs for more info.**")
             print(err)
             await clean_up(dwld_loc, out_loc)
             return
     else:
-        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -vf crop=1280:536 -c:v libx265 -crf 23 -preset slow -c:a copy -c:s copy -metadata title='Tamil Fusion - t.me/TamilFusion1' -metadata Info='Encoded By - GJ | TFx' -metadata:s:v title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:a title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:s title='Tamil Fusion - t.me/TamilFusion1' '{out_loc}' -y")
+        out, err, rcode, pid = await execute(f"ffmpeg -i '{dwld_loc}' -vf crop=1440:784 -c:v libx265 -crf 23 -preset slow -c:a copy -c:s copy -metadata title='Tamil Fusion - t.me/TamilFusion1' -metadata Info='Encoded By - GJ | TFx' -metadata:s:v title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:a title='Tamil Fusion - t.me/TamilFusion1' -metadata:s:s title='Tamil Fusion - t.me/TamilFusion1' '{out_loc}' -y")
         if rcode != 0:
             await message.edit_text("**Error Occured. See Logs for more info.**")
             print(err)
